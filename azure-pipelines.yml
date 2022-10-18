@@ -24,7 +24,7 @@ variables:
     readonly: true
 
 stages:
-  - stage: Ejecución de pruebas
+  - stage: Ejecucion_Pruebas
     displayName: Ejecución de pruebas automatizadas
     jobs:
       - job: Construccion_ejecucion
