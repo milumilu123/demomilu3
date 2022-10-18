@@ -17,8 +17,6 @@ parameters:
     displayName: Ambiente a ejecutar
     values:
       - 'dev'  
-pool:
-  vmImage: ubuntu-latest
 
 variables:
   - name: vmImage
@@ -36,7 +34,7 @@ stages:
           - checkout: git://training-azuredevops/serenity-screenplay-training
           - script: |
               cd serenity-screenplay-training
-              mvn clean verify "-Dcucumber.filter.tags=${{ parameter.tags }}"  
+              mvn clean verify "-Dcucumber.filter.tags=${{ parameters.tags }}"
             displayName: 'Ejecución de pruebas automatizadas'
           - script: |
               cd serenity-screenplay-training
