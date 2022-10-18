@@ -1,0 +1,59 @@
+# Maven
+# Build your Java project and run tests with Apache Maven.
+# Add steps that analyze code, save build artifacts, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/java
+
+#trigger:
+#- main
+
+parameters:
+  - name: tags
+    type: string
+    displayName: Tags a ejecutar
+    values:
+      - '@Login'
+  - name: env
+    type: string
+    displayName: Ambiente a ejecutar
+    values:
+      - 'dev'  
+pool:
+  vmImage: ubuntu-latest
+
+variables:
+  - name: vmImage
+    value: 'windows-latest'
+    readonly: true
+
+stages:
+  - stage: Ejecución de pruebas
+    displayName: Ejecución de pruebas automatizadas
+    jobs:
+      - job: Construccion_ejecucion
+        pool:
+          vmImage: $(vmImage)
+        steps:
+          - checkout: git://training-azuredevops/serenity-screenplay-training
+          - script: |
+              cd serenity-screenplay-training
+              mvn clean verify "-Dcucumber.filter.tags=${{ parameter.tags }}"  
+            displayName: 'Ejecución de pruebas automatizadas'
+          - script: |
+              cd serenity-screenplay-training
+              mvn serenity:aggregate
+            condition: always()
+            displayName: 'Generar reporte Serenity'
+          - task: PublishBuildArtifacts@1
+            condition: always()
+            inputs:
+              targetPath: 'D:/a/1/s/gir-automation-web/target/site/serenity/'
+              artifactName: 'ReporteSerenity'
+              artifactType: 'FilePath'
+            displayName: 'Publicar reporte'
+          - task: PublishTestResults@2
+            condition: always()
+            inputs:
+              testResultsFormat: 'JUnit'
+              testResultsFiles: '**TEST-*.xml'
+              publishRunAttachments: true
+            displayName: 'Publicar resultados de pruebas'
