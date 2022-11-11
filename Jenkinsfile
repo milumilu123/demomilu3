@@ -15,9 +15,9 @@ pipeline {
                         }
                         else{
                            bat "mvn clean verify"
-                        } finally{
-                          publishReport();
                         }
+                    } finally{
+                          publishReport();
                     }
                 }
             }
