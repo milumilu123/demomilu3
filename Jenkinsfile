@@ -23,6 +23,7 @@ pipeline {
             }
         }
     }
+}
     def publishReport(){
         publishHTML(target: [
             reportName : 'Serenity',
@@ -33,4 +34,3 @@ pipeline {
             allowMissing: false
         ])
     }
-}
