@@ -24,7 +24,7 @@ pipeline {
         }
     }
     def publishReport(){
-    publishHTML(target: [
+        publishHTML(target: [
             reportName : 'Serenity',
             reportDir:   'target/site/serenity',
             reportFiles: 'index.html',
