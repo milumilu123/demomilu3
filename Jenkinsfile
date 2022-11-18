@@ -10,12 +10,15 @@ pipeline {
                 git branch:"main", url: 'https://github.com/cesaralcantarav/serenity-screenplay-training'
                 script{
                     try{
-                        if(isUnix()){
-                           sh "mvn clean verify"
+                        withMaven(maven: 'maven3.8.5'){
+                            if(isUnix()){
+                               sh "mvn clean verify"
+                            }
+                             else{
+                                bat "mvn clean verify"
+                             }
                         }
-                        else{
-                           bat "mvn clean verify"
-                        }
+
                     } finally{
                           publishReport();
                     }
