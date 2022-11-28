@@ -17,7 +17,8 @@
         <serenity.cucumber.version>3.3.0</serenity.cucumber.version>
         <cucumber.version>7.4.1</cucumber.version>
         <apache-poi-version>3.17</apache-poi-version>
-
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
     </properties>
 
 <!--    <repositories>-->
