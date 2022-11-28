@@ -3,19 +3,21 @@ pipeline {
     parameters {
         choice(name: 'AGENT_NODE', choices: ['any'], description: 'Seleccionar NODO')
         choice(name: 'ENV', choices: ['dev', 'uat'], description: 'Selecionar ambiente')
+        string(name: 'SCENARIO_TAG', trim: false, description: 'Tag a ejecutar')
     }
     stages {
         stage('Test automation'){
             steps{
-                git branch:"main", url: 'https://github.com/cesaralcantarav/serenity-screenplay-training'
                 script{
                     try{
                         withMaven(maven: 'maven3.8.5'){
                             if(isUnix()){
-                               sh "mvn clean verify"
+                               echo "Ejecutando tag: $params.SCENARIO_TAG"
+                               sh "mvn clean verify -Dcucumber.filter.tags=%SCENARIO_TAG%"
                             }
                              else{
-                                bat "mvn clean verify"
+                                echo "Ejecutando tag: $params.SCENARIO_TAG"
+                                bat "mvn clean verify -Dcucumber.filter.tags=%SCENARIO_TAG%"
                              }
                         }
 
@@ -29,7 +31,7 @@ pipeline {
 }
     def publishReport(){
         publishHTML(target: [
-            reportName : 'Serenity',
+            reportName : 'Serenity Report',
             reportDir:   'target/site/serenity',
             reportFiles: 'index.html',
             keepAll:     true,
