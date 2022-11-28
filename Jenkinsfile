@@ -13,11 +13,11 @@ pipeline {
                         withMaven(maven: 'maven3.8.5'){
                             if(isUnix()){
                                echo "Ejecutando tag: $params.SCENARIO_TAG"
-                               sh "mvn clean verify -Dcucumber.filter.tags=%SCENARIO_TAG%"
+                               sh 'mvn clean verify -Dcucumber.options="--tags @%SCENARIO_TAG%"'
                             }
                              else{
                                 echo "Ejecutando tag: $params.SCENARIO_TAG"
-                                bat "mvn clean verify -Dcucumber.filter.tags=%SCENARIO_TAG%"
+                                bat 'mvn clean verify -Dcucumber.options="--tags @%SCENARIO_TAG%"'
                              }
                         }
 
