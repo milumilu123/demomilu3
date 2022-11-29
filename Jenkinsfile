@@ -21,6 +21,7 @@ pipeline {
                             }
                              else{
                                 echo "Ejecutando tag: $params.SCENARIO_TAG"
+                                bat "java -version"
                                 bat 'mvn clean verify -Dcucumber.options="--tags @%SCENARIO_TAG%"'
                              }
                         }
