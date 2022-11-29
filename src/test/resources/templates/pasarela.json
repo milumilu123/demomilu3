@@ -1,0 +1,22 @@
+{
+  "paymentOrder": {
+    "amount": 100,
+    "currency": "PEN",
+    "buyer": {
+      "id": "0090909090",
+      "email": [
+        {
+          "value": "SIXFLAGSIBK.PRUEBAS1@GMAIL.COM"
+        }
+      ]
+    },
+    "items": [
+      {
+        "identifier": "{identifier}",
+        "description": "{description}",
+        "quantity": 1,
+        "value": 100
+      }
+    ]
+  }
+}
