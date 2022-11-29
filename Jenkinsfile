@@ -11,6 +11,7 @@ pipeline {
                 jdk "JDK 11"
             }
             steps{
+                bat "java -version"
                 script{
                     try{
                         withMaven(maven: 'maven3.8.5'){
