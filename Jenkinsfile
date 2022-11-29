@@ -9,6 +9,8 @@ pipeline {
         stage("Java Version"){
             tools{
                 jdk "JDK 11"
+            }
+            steps {
                 bat "java -version"
             }
         }
