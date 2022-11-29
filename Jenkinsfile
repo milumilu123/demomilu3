@@ -6,7 +6,13 @@ pipeline {
         string(name: 'SCENARIO_TAG', trim: false, description: 'Tag a ejecutar')
     }
     stages {
-        stage('Test automation'){
+        stage("Java Version"){
+            tools{
+                jdk "JDK 11"
+                bat "java -version"
+            }
+        }
+        stage('Execute Tests'){
             steps{
                 script{
                     try{
