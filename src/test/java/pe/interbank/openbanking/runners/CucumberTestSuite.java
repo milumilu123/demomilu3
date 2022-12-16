@@ -16,15 +16,15 @@ import java.util.logging.Logger;
         plugin = {"json:target/build/cucumber.json"},
         features = {"src/test/resources/features"},
         glue = "pe.interbank.openbanking.stepdefinitions",
-        tags = "@Unhappy"
+        tags = "@test1"
 )
 public class CucumberTestSuite {
 
-//    @BeforeClass
-//    public static void beforeAll(){
-//        Logger.getLogger(CucumberTestSuite.class.getName()).info("Before all execution >>>");
-//    }
-//
+    @BeforeClass
+    public static void beforeAll(){
+        Logger.getLogger(CucumberTestSuite.class.getName()).info("Before all execution >>>");
+    }
+
 //    @AfterClass
 //    public static void afterAll(){
 //        Logger.getLogger(CucumberTestSuite.class.getName()).info("After all execution >>>");

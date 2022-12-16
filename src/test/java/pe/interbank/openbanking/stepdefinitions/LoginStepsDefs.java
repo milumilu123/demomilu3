@@ -1,5 +1,6 @@
 package pe.interbank.openbanking.stepdefinitions;
 
+import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import io.cucumber.java.en.Given;
@@ -13,7 +14,11 @@ import org.openqa.selenium.TakesScreenshot;
 import pe.interbank.openbanking.questions.web.InventoryDisplayed;
 import pe.interbank.openbanking.questions.web.LoginQuestion;
 import pe.interbank.openbanking.tasks.web.Login;
+import pe.interbank.openbanking.tasks.web.Logout;
 import pe.interbank.openbanking.tasks.web.NavigateTo;
+
+import java.util.List;
+import java.util.Map;
 
 import static net.serenitybdd.screenplay.GivenWhenThen.seeThat;
 import static net.serenitybdd.screenplay.actors.OnStage.theActorCalled;
@@ -46,6 +51,19 @@ public class LoginStepsDefs {
         theActorInTheSpotlight().attemptsTo(
                 Login.withCredentials(user, password)
         );
+        screenShot();
+    }
+
+    @When("inicia sesión con las credenciales")
+    public void iniciaSesiónConLasCredenciales(DataTable dataTable) {
+        List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
+        for(Map<String, String> user : data){
+            theActorInTheSpotlight().attemptsTo(
+                    Login.withCredentials(user.get("user"), user.get("password")),
+                    new Logout()
+            );
+        }
+
         screenShot();
     }
 

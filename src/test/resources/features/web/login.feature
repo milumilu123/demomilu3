@@ -9,6 +9,16 @@ Feature: Login en la página de SauceDemo
     Then el login es satisfactorio
 
 
+  @test1
+  Scenario: Inicio de sesión exitoso
+
+    Given que el Cliente se encuentra en la página SauceDemo
+    When inicia sesión con las credenciales
+      | user          | password     |
+      | standard_user | secret_sauce |
+      | standard_user | secret_sauce |
+    Then el login es satisfactorio
+
   @Unhappy
   Scenario: Inicio de sesión con usuario bloqueado
 
