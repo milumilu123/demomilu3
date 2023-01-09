@@ -3,7 +3,7 @@ package pe.interbank.openbanking.questions.web;
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.Text;
 import net.serenitybdd.screenplay.questions.Visibility;
-import pe.interbank.openbanking.userinterfaces.InventoryPage;
+import pe.interbank.openbanking.userinterfaces.pages.InventoryPage;
 
 public class InventoryDisplayed {
 

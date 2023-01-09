@@ -1,4 +1,4 @@
-package pe.interbank.openbanking.userinterfaces;
+package pe.interbank.openbanking.userinterfaces.pages;
 
 import net.serenitybdd.screenplay.targets.Target;
 import org.openqa.selenium.By;

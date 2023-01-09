@@ -2,7 +2,7 @@ package pe.interbank.openbanking.questions.web;
 
 import net.serenitybdd.screenplay.Question;
 import net.serenitybdd.screenplay.questions.TextContent;
-import pe.interbank.openbanking.userinterfaces.LoginPage;
+import pe.interbank.openbanking.userinterfaces.pages.LoginPage;
 
 public class LoginQuestion {
 

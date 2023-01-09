@@ -4,8 +4,8 @@ import net.serenitybdd.screenplay.Actor;
 import net.serenitybdd.screenplay.Task;
 import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.waits.WaitUntil;
-import pe.interbank.openbanking.userinterfaces.InventoryPage;
-import pe.interbank.openbanking.userinterfaces.LoginPage;
+import pe.interbank.openbanking.userinterfaces.pages.InventoryPage;
+import pe.interbank.openbanking.userinterfaces.pages.LoginPage;
 
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 

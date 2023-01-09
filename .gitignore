@@ -13,6 +13,7 @@ buildNumber.properties
 *.iml
 src/test/resources/evidences/*
 src/test/resources/webdriver/windows/chromedriver.exe
+src/test/resources/app/*
 
 # Avoid ignoring Maven wrapper jar file (.jar files are usually ignored)
 !/.mvn/wrapper/maven-wrapper.jar

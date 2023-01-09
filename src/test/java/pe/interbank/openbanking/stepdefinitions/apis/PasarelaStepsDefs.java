@@ -1,4 +1,4 @@
-package pe.interbank.openbanking.stepdefinitions;
+package pe.interbank.openbanking.stepdefinitions.apis;
 
 import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;

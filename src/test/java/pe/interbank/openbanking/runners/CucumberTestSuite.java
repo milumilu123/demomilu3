@@ -16,7 +16,7 @@ import java.util.logging.Logger;
         plugin = {"json:target/build/cucumber.json"},
         features = {"src/test/resources/features"},
         glue = "pe.interbank.openbanking.stepdefinitions",
-        tags = "@test1"
+        tags = "@mobile"
 )
 public class CucumberTestSuite {
 

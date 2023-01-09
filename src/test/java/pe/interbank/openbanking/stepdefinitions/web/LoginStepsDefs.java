@@ -1,4 +1,4 @@
-package pe.interbank.openbanking.stepdefinitions;
+package pe.interbank.openbanking.stepdefinitions.web;
 
 import io.cucumber.datatable.DataTable;
 import io.cucumber.java.Before;
@@ -86,4 +86,6 @@ public class LoginStepsDefs {
                 seeThat("El mensaje de error", LoginQuestion.errorMessage(), equalTo(message))
         );
     }
+
+
 }
