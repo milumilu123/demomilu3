@@ -16,7 +16,7 @@ import pe.interbank.openbanking.questions.web.LoginQuestion;
 import pe.interbank.openbanking.tasks.web.Login;
 import pe.interbank.openbanking.tasks.web.Logout;
 import pe.interbank.openbanking.tasks.web.NavigateTo;
-
+import java.util.concurrent.TimeUnit;
 import java.util.List;
 import java.util.Map;
 
@@ -47,10 +47,15 @@ public class LoginStepsDefs {
     }
 
     @When("inicia sesión con las credenciales: {string}, {string}")
-    public void iniciaSesiónConLasCredenciales(String user, String password) {
+    public void iniciaSesiónConLasCredenciales(String user, String password) throws InterruptedException {
         theActorInTheSpotlight().attemptsTo(
                 Login.withCredentials(user, password)
         );
+        try {
+            TimeUnit.SECONDS.sleep(2);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
         screenShot();
     }
 
