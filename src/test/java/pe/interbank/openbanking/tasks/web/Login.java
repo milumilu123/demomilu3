@@ -7,6 +7,7 @@ import net.serenitybdd.screenplay.actions.Click;
 import net.serenitybdd.screenplay.actions.Enter;
 import net.serenitybdd.screenplay.waits.WaitUntil;
 import net.thucydides.core.annotations.Step;
+import pe.interbank.openbanking.userinterfaces.pages.InventoryPage;
 import pe.interbank.openbanking.userinterfaces.pages.LoginPage;
 
 import static net.serenitybdd.screenplay.Tasks.instrumented;
@@ -34,6 +35,7 @@ public class Login implements Task {
                 Enter.theValue(user).into(LoginPage.USERNAME_INPUT),
                 Enter.theValue(password).into(LoginPage.PASSWORD_INPUT),
                 Click.on(LoginPage.LOGIN_BUTTON)
+
         );
 
     }

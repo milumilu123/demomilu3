@@ -7,6 +7,8 @@ import net.serenitybdd.screenplay.waits.WaitUntil;
 import pe.interbank.openbanking.userinterfaces.pages.InventoryPage;
 import pe.interbank.openbanking.userinterfaces.pages.LoginPage;
 
+import java.util.concurrent.TimeUnit;
+
 import static net.serenitybdd.screenplay.matchers.WebElementStateMatchers.isVisible;
 
 public class Logout implements Task {

@@ -1,7 +1,7 @@
 @Login
 Feature: Login en la página de SauceDemo
 
-  @TEST_P001-41
+  @test1
   Scenario: Inicio de sesión exitoso
 
     Given que el Cliente se encuentra en la página SauceDemo
@@ -9,15 +9,15 @@ Feature: Login en la página de SauceDemo
     Then el login es satisfactorio
 
 
-  @test1
+  @test2
   Scenario: Inicio de sesión exitoso
 
     Given que el Cliente se encuentra en la página SauceDemo
     When inicia sesión con las credenciales
       | user          | password     |
       | standard_user | secret_sauce |
-      | standard_user | secret_sauce |
-    Then el login es satisfactorio
+    And el Cliente visualiza un producto
+    Then finaliza sesion
 
   @Unhappy
   Scenario: Inicio de sesión con usuario bloqueado

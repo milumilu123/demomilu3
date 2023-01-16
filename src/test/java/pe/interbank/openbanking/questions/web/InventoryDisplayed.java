@@ -14,4 +14,7 @@ public class InventoryDisplayed {
     public static Question <String> text(){
         return actor -> Text.of(InventoryPage.PRODUCTS_TITLE.of("").called("")).answeredBy(actor);
     }
+    public static Question<Boolean> nameProducts(){
+        return actor -> Visibility.of(InventoryPage.PRODUCT_NAME).answeredBy(actor).booleanValue();
+    }
 }
