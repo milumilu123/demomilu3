@@ -18,9 +18,12 @@ import pe.interbank.openbanking.questions.web.LoginQuestion;
 import pe.interbank.openbanking.tasks.web.Login;
 import pe.interbank.openbanking.tasks.web.Logout;
 import pe.interbank.openbanking.tasks.web.NavigateTo;
+<<<<<<< HEAD
 import pe.interbank.openbanking.userinterfaces.pages.InventoryPage;
 import pe.interbank.openbanking.userinterfaces.pages.LoginPage;
 
+=======
+>>>>>>> 2b57ff3c38c9786b1d730b950944be7b65f8f586
 import java.util.concurrent.TimeUnit;
 import java.util.List;
 import java.util.Map;
